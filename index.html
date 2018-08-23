@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="robots" content="noindex">
+     <title>HOME</title>
+<style>
+h1 {
+	font-size:10vw;
+	text-align: center;
+    margin-left: 1px;
+}
+
+h3 {
+	font-size:5vw;
+	text-align: center;
+    margin-left: 1px;
+}
+
+
+* {
+    box-sizing: border-box;
+}
+
+.row {
+    display: flex;
+}
+
+/* Create two equal columns that sits next to each other */
+.column {
+    flex: 50%;
+    padding: 20px;
+}
+
+
+@media screen and (max-width: 600px) {
+    .column {
+        width: 100%;
+    }
+}
+
+#customh2 {
+    font-size:2.7vw;
+    font-weight:bold;
+    
+}
+
+#leftcol p {
+    text-align: right;
+
+}
+
+#rightcol p, h2 {
+    text-align: left;
+}
+
+</style>
+
+<script>
+function startTime() {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    m = checkTime(m);
+    s = checkTime(s);
+    document.getElementById('txt').innerHTML =
+    h + ":" + m + ":" + s;
+    var t = setTimeout(startTime, 500);
+}
+function checkTime(i) {
+    if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+    return i;
+}
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</head>
+
+
+<body onload="startTime()">
+
+    <h3><div id="weekn" class="weekn2"></div></h3>
+
+<script>
+Date.prototype.getWeek = function () {
+    var target  = new Date(this.valueOf());
+    var dayNr   = (this.getDay() + 6) % 7;
+    target.setDate(target.getDate() - dayNr + 3);
+    var firstThursday = target.valueOf();
+    target.setMonth(0, 1);
+    if (target.getDay() != 4) {
+        target.setMonth(0, 1 + ((4 - target.getDay()) + 7) % 7);
+    }
+    return 1 + Math.ceil((firstThursday - target) / 604800000);
+}
+
+var w= new Date();
+document.getElementById("weekn").innerHTML = "Week " + (w.getWeek());
+
+</script>
+
+    
+    
+<h1>
+    <div id="txt"></div>
+</h1>
+
+
+
+
+
+<h3><div id="demo" class="demo2"></div></h3>
+
+<script>
+var d = new Date();
+var n = d.toDateString();
+document.getElementById("demo").innerHTML = n;
+</script>
+
+
+<div class="row">
+
+
+    <div class="column" id="leftcol">
+        <p id="customh2">WRITING</p>
+  <p><a href="https://kdp.amazon.com">KDP</a></p>
+  <p><a href="https://kdp.amazon.com/help?topicId=A377RPHW6ZG4D8">KDP Desc</a></p>
+  <p><a href="https://www.smashwords.com/dashboard">Smashwords</a></p>
+  <p><a href="https://www.draft2digital.com/book/">Draft2Digital</a></p>
+  <br />
+  <p><a href="https://www.royalroad.com/my/fiction/20081">RR</a></p>
+  <p><a href="https://www.facebook.com/groups/781495321956934/">20booksto50k</a></p>
+  <p><a href="https://www.facebook.com/groups/LitRPGGroup/">LitRPGGroup</a></p>
+  <p><a href="https://litrpgforum.com/">LitRPG Forum</a></p>
+  <p><a href="https://www.reddit.com/r/eroticauthors/">r/eauth</a></p>
+  </div>
+
+  <div class="column" id="rightcol"><h2>GENERAL</h2>
+   <p><a href="https://my.rmit.edu.au/portal/">RMIT</a></p>
+  <p><a href="http://rmit.instructure.com/">RMIT/Canvas</a></p>
+  <p><a href="http://www1.rmit.edu.au/library/lynda">RMIT/Lynda</a></p>
+  <p><a href="http://open.edu.au/">OpenU</a></p>
+  <br />
+  <p><a href="https://toggl.com/app/timer">Toggl</a></p>
+  <p><a href="https://app.youneedabudget.com/">Ynab</a></p>
+  <p><a href="https://www.rescuetime.com/login?return_to=%2Fdashboard">Rescuetime</a></p>
+  <br />
+  <p><a href="https://gbclient.hostgator.com/login">Hostgator Billing</a></p>
+  <p><a href="https://gator1125.hostgator.com:2096/">CPanel Login</a></p>
+  </div>
+</div> 
+
+</body>
+</html>
+
