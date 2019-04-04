@@ -13,8 +13,18 @@ h3 {
 }
 
 
+
 * {
     box-sizing: border-box;
+}
+
+#countdown {
+    font-size:2.5vw;
+    font-weight: bold;
+    margin: auto;
+    width: 50%;
+    text-align: center;
+    color: white;
 }
     
 body {
@@ -22,6 +32,7 @@ body {
     margin: 0;
     background-color: black;
 }
+
 
 .row {
     display: flex;
@@ -82,4 +93,22 @@ a:hover, a:active { text-decoration: none; color:black }
     padding: 0;
     margin-bottom: 0;
     margin-top: -30px;
+}
+
+.countup {
+  text-align: center;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+.countup .timeel {
+  background: black;
+  margin: 0;
+  color: white;
+  min-width: 2 rem;
+  margin-left: px;
+}
+.countup span[class*="timeRef"] {
+  margin-left: 0;
+  background: black;
+  color: white;
 }
