@@ -93,7 +93,7 @@ function countUpFromTime(countFrom, id) {
   countFrom = new Date(countFrom).getTime();
   var now = new Date(),
       countFrom = new Date(countFrom),
-      timeDifference = (now - countFrom);
+      timeDifference = (now - countFrom)+ 1;
     
   var secondsInADay = 60 * 60 * 1000 * 24,
       secondsInAHour = 60 * 60 * 1000;
